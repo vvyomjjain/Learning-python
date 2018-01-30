@@ -2,7 +2,6 @@ import matplotlib.pyplot as mpl
 import numpy as np
 
 x = np.genfromtxt("sample_stocks.csv", delimiter = ',')
-print(x)
 
 mpl.scatter(x[:,0], x[:,1], s=10)
 mpl.show()
@@ -65,28 +64,5 @@ class k_means:
             if optimized:
                 break
 
-            mpl.ion()
-            mpl.cla()
-            for c in self.centroids:
-                mpl.scatter(self.centroids[c][0], self.centroids[c][1], marker="o", color="k", s=150, linewidth=5)
-
-            for classification in self.classifications:
-                color = colors[classification]
-                for featureset in self.classifications[classification]:
-                    mpl.scatter(featureset[0], featureset[1], marker="o", color=color, s=10)
-
-            mpl.show()
-            mpl.pause(0.01)
-
 obj = k_means()
 obj.fit(x)
-
-for c in obj.centroids:
-    mpl.scatter(obj.centroids[c][0], obj.centroids[c][1], marker="o", color="k", s=150, linewidth=5)
-
-for classification in obj.classifications:
-    color = colors[classification]
-    for featureset in obj.classifications[classification]:
-        mpl.scatter(featureset[0], featureset[1], marker="o", color=color, s=10)
-
-mpl.show()
