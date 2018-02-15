@@ -65,18 +65,18 @@ class k_means:
             if optimized:
                 break
 
-            mpl.ion()
-            mpl.cla()
-            for c in self.centroids:
-                mpl.scatter(self.centroids[c][0], self.centroids[c][1], marker="o", color="k", s=150, linewidth=5)
-
-            for classification in self.classifications:
-                color = colors[classification]
-                for featureset in self.classifications[classification]:
-                    mpl.scatter(featureset[0], featureset[1], marker="o", color=color, s=10)
-
-            mpl.show()
-            mpl.pause(0.01)
+            # mpl.ion()
+            # mpl.cla()
+            # for c in self.centroids:
+            #     mpl.scatter(self.centroids[c][0], self.centroids[c][1], marker="o", color="k", s=150, linewidth=5)
+            #
+            # for classification in self.classifications:
+            #     color = colors[classification]
+            #     for featureset in self.classifications[classification]:
+            #         mpl.scatter(featureset[0], featureset[1], marker="o", color=color, s=10)
+            #
+            # mpl.show()
+            # mpl.pause(0.01)
 
 obj = k_means()
 obj.fit(x)
